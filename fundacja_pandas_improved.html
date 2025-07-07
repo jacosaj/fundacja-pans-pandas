@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundacja Pans Pandas - Wsparcie dla Dzieci z PANS/PANDAS</title>
+    <meta name="description" content="Fundacja Pans Pandas - bezpłatne konsultacje, wsparcie emocjonalne i edukacja dla rodzin dzieci z PANS/PANDAS. Działamy w całej Polsce.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pandas-blue': '#2563EB',
+                        'pandas-blue-dark': '#1D4ED8',
+                        'pandas-purple': '#8B5CF6',
+                        'pandas-pink': '#EC4899',
+                        'pandas-green': '#10B981',
+                        'pandas-teal': '#14B8A6',
+                        'medical-blue': '#3B82F6',
+                        'warm-gray': '#F7F3F0',
+                        'soft-blue': '#EFF6FF',
+                        'caring-green': '#D1FAE5'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Support Bar -->
+    <div class="bg-pandas-blue text-white text-sm py-3 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="font-medium">💙 Bezpłatne konsultacje dla rodzin</span>
+                <span class="hidden md:inline text-blue-200">•</span>
+                <span class="hidden md:inline text-blue-200">Działamy w całej Polsce</span>
+            </div>
+            <a href="#wsparcie" class="bg-white text-pandas-blue px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors text-sm">
+                Wpłać cegiełkę
+            </a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg border-b-2 border-pandas-blue/10">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-2xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xl">🧠</span>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-gray-800 font-serif">Fundacja Pans Pandas</div>
+                        <div class="text-sm text-pandas-blue font-medium">Wsparcie • Edukacja • Diagnoza • Terapia</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Start</a>
+                    <a href="#o-fundacji" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">O Fundacji</a>
+                    <a href="#zespol" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Zespół</a>
+                    <a href="#konsultacje" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Konsultacje</a>
+                    <a href="#wsparcie" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Wsparcie</a>
+                    <a href="#kontakt" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Kontakt</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <a href="https://fundacjapanspandas.nakiedy.pl/" target="_blank" 
+                   class="hidden lg:inline-flex items-center bg-pandas-blue text-white px-6 py-3 rounded-full hover:bg-pandas-blue-dark transition-colors font-semibold shadow-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    Bezpłatna konsultacja
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2" aria-label="Otwórz menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="lg:hidden hidden mt-6 pb-4 border-t pt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Start</a>
+                    <a href="#o-fundacji" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">O Fundacji</a>
+                    <a href="#zespol" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Zespół</a>
+                    <a href="#konsultacje" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Konsultacje</a>
+                    <a href="#wsparcie" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Wsparcie</a>
+                    <a href="#kontakt" class="text-gray-700 hover:text-pandas-blue transition-colors font-medium">Kontakt</a>
+                    <a href="https://fundacjapanspandas.nakiedy.pl/" target="_blank" 
+                       class="bg-pandas-blue text-white px-6 py-3 rounded-full text-center hover:bg-pandas-blue-dark transition-colors font-semibold">
+                        Bezpłatna konsultacja
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-br from-soft-blue via-white to-caring-green">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight font-serif">
+                        Jesteśmy z Wami <br class="hidden md:block">
+                        <span class="text-pandas-blue">każdego dnia</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
+                        Fundacja założona przez rodziców i specjalistów - <strong>z potrzeby serca</strong>. 
+                        Wspieramy rodziny dzieci z PANS/PANDAS poprzez bezpłatne konsultacje, 
+                        edukację i działania diagnostyczno-terapeutyczne.
+                    </h2>
+                    <div class="bg-white/80 rounded-2xl p-6 max-w-3xl mx-auto border-2 border-pandas-blue/20">
+                        <p class="text-lg text-pandas-blue font-semibold mb-2">📞 Bezpłatne konsultacje telefoniczne</p>
+                        <p class="text-gray-600">Do 30 minut • Cała Polska • Konsultacje informacyjne</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                    <a href="https://fundacjapanspandas.nakiedy.pl/" target="_blank" 
+                       class="inline-flex items-center bg-pandas-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-pandas-blue-dark transition-colors shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        Umów bezpłatną konsultację
+                    </a>
+                    <a href="#statut" 
+                       class="inline-flex items-center bg-white text-pandas-blue border-2 border-pandas-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-pandas-blue hover:text-white transition-colors shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Statut Fundacji
+                    </a>
+                </div>
+
+                <!-- Key Focus Areas -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white/90 p-6 rounded-2xl shadow-lg border-2 border-pandas-blue/20 hover:shadow-xl transition-all hover:border-pandas-blue/40">
+                        <div class="w-12 h-12 bg-pandas-blue/10 rounded-xl flex items-center justify-center mb-4">
+                            <span class="text-2xl">🧬</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-pandas-blue">PANS/PANDAS</h3>
+                        <p class="text-gray-600 text-sm">Pediatryczne zespoły neuropsychiatryczne o podłożu autoimmunologicznym</p>
+                    </div>
+
+                    <div class="bg-white/90 p-6 rounded-2xl shadow-lg border-2 border-pandas-teal/20 hover:shadow-xl transition-all hover:border-pandas-teal/40">
+                        <div class="w-12 h-12 bg-pandas-teal/10 rounded-xl flex items-center justify-center mb-4">
+                            <span class="text-2xl">👨‍⚕️</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-pandas-teal">Wsparcie medyczne</h3>
+                        <p class="text-gray-600 text-sm">Pomoc w diagnostyce i procesie terapeutycznym</p>
+                    </div>
+
+                    <div class="bg-white/90 p-6 rounded-2xl shadow-lg border-2 border-pandas-pink/20 hover:shadow-xl transition-all hover:border-pandas-pink/40">
+                        <div class="w-12 h-12 bg-pandas-pink/10 rounded-xl flex items-center justify-center mb-4">
+                            <span class="text-2xl">💝</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-pandas-pink">Wsparcie emocjonalne</h3>
+                        <p class="text-gray-600 text-sm">Pomoc psychologiczna dla dzieci i całych rodzin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Fundacji -->
+    <section id="o-fundacji" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-serif">O Fundacji</h2>
+                    <p class="text-lg text-gray-600">Nasza misja, cele i zasięg działania</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-pandas-blue font-serif">Misja i cele</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-blue/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-blue text-xl">🔬</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Edukacja i popularyzacja wiedzy</h4>
+                                    <p class="text-gray-600">Rozpowszechnianie rzetelnej wiedzy o PANS/PANDAS wśród rodziców i specjalistów</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-teal/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-teal text-xl">💙</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Wsparcie emocjonalne</h4>
+                                    <p class="text-gray-600">Pomoc psychologiczna dla dzieci i rodzin w trudnych momentach</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-pink/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-pink text-xl">🩺</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Działania diagnostyczne i terapeutyczne</h4>
+                                    <p class="text-gray-600">Wsparcie w procesie diagnostycznym i terapeutycznym</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-purple/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-purple text-xl">🧠</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Budowanie świadomości</h4>
+                                    <p class="text-gray-600">Zwiększanie świadomości społecznej o zespołach PANS/PANDAS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-caring-green to-soft-blue rounded-2xl p-8 border-2 border-pandas-blue/20">
+                        <div class="text-center mb-8">
+                            <div class="w-16 h-16 bg-pandas-blue rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white text-2xl">🌍</span>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4 text-pandas-blue font-serif">Zasięg działania</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white/80 rounded-xl p-4 border border-pandas-blue/20">
+                                <h4 class="font-semibold text-pandas-blue mb-2">🇵🇱 Cała Polska</h4>
+                                <p class="text-gray-600 text-sm">Działamy na terenie całego kraju, docierając do rodzin w każdym województwie</p>
+                            </div>
+                            <div class="bg-white/80 rounded-xl p-4 border border-pandas-blue/20">
+                                <h4 class="font-semibold text-pandas-blue mb-2">💻 Konsultacje online</h4>
+                                <p class="text-gray-600 text-sm">Bezpłatne konsultacje telefoniczne dostępne dla wszystkich potrzebujących</p>
+                            </div>
+                            <div class="bg-white/80 rounded-xl p-4 border border-pandas-blue/20">
+                                <h4 class="font-semibold text-pandas-blue mb-2">🌐 Wsparcie globalne</h4>
+                                <p class="text-gray-600 text-sm">Pomagamy także polskim rodzinom mieszkającym za granicą</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dane prawne -->
+                <div id="statut" class="bg-warm-gray rounded-2xl p-8 border-2 border-pandas-blue/20">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-pandas-blue font-serif">Dane prawne Fundacji</h3>
+                        <p class="text-gray-600">Oficjalne informacje o Fundacji</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white rounded-xl p-6 border border-pandas-blue/20">
+                            <h4 class="text-lg font-semibold mb-4 text-pandas-blue">Dane rejestrowe</h4>
+                            <div class="space-y-2 text-gray-600">
+                                <div><strong>Pełna nazwa:</strong> Fundacja Pans Pandas</div>
+                                <div><strong>NIP:</strong> [Do uzupełnienia]</div>
+                                <div><strong>KRS:</strong> [Do uzupełnienia]</div>
+                                <div><strong>REGON:</strong> [Do uzupełnienia]</div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 border border-pandas-blue/20">
+                            <h4 class="text-lg font-semibold mb-4 text-pandas-blue">Dokumenty</h4>
+                            <div class="space-y-4">
+                                <a href="#" class="flex items-center space-x-3 text-pandas-blue hover:text-pandas-blue-dark transition-colors">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span class="font-semibold">Pobierz statut Fundacji (PDF)</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-pandas-blue hover:text-pandas-blue-dark transition-colors">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span class="font-semibold">Sprawozdanie finansowe</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zespół -->
+    <section id="zespol" class="py-20 bg-gradient-to-br from-soft-blue to-caring-green">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-serif">Nasz Zespół</h2>
+                    <p class="text-lg text-gray-600">Ludzie, którzy tworzą Fundację - rodzice i specjaliści z misją</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Prezes Fundacji -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-pandas-blue/20 text-center hover:shadow-xl transition-all">
+                        <div class="w-24 h-24 bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl font-bold">PS</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pandas-blue">Paulina Swoboda</h3>
+                        <p class="text-pandas-blue font-medium mb-4">Prezes Fundacji</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Mama dziecka z PANS/PANDAS, założycielka Fundacji. Specjalizuje się w budowaniu 
+                            świadomości i wsparciu rodzin w trudnych momentach diagnozy i terapii.
+                        </p>
+                    </div>
+
+                    <!-- Psycholog -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-pandas-teal/20 text-center hover:shadow-xl transition-all">
+                        <div class="w-24 h-24 bg-gradient-to-br from-pandas-teal to-pandas-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl">👩‍⚕️</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pandas-teal">[Imię i Nazwisko]</h3>
+                        <p class="text-pandas-teal font-medium mb-4">Psycholog</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Specjalista psycholog z doświadczeniem w pracy z dziećmi i rodzinami. 
+                            Prowadzi konsultacje psychologiczne i wspiera rodziny w radzeniu sobie z wyzwaniami.
+                        </p>
+                    </div>
+
+                    <!-- Specjalista medyczny -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-pandas-pink/20 text-center hover:shadow-xl transition-all">
+                        <div class="w-24 h-24 bg-gradient-to-br from-pandas-pink to-pandas-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-white text-2xl">🩺</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-pandas-pink">[Imię i Nazwisko]</h3>
+                        <p class="text-pandas-pink font-medium mb-4">Specjalista medyczny</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Doświadczony specjalista w dziedzinie pediatrii i neurologii. 
+                            Wspiera rodziny w procesie diagnostycznym i terapeutycznym PANS/PANDAS.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Misja zespołu -->
+                <div class="mt-16 bg-white/80 rounded-2xl p-8 border-2 border-pandas-blue/20 text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-pandas-blue font-serif">Nasz zespół, Wasza nadzieja</h3>
+                    <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Każdy z nas ma osobiste doświadczenie lub głęboką wiedzę na temat PANS/PANDAS. 
+                        Łączy nas wspólna misja - nieść pomoc i wsparcie rodzinom, które przechodzą przez 
+                        trudne chwile związane z diagnozą i terapią swoich dzieci.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bezpłatne konsultacje -->
+    <section id="konsultacje" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-serif">Bezpłatne Konsultacje</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Oferujemy bezpłatne konsultacje telefoniczne dla rodzin dzieci z PANS/PANDAS. 
+                        Jesteśmy tutaj, aby Was wesprzeć na każdym etapie tej trudnej drogi.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-pandas-blue font-serif">Co oferujemy:</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-blue/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-blue text-xl">📞</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Konsultacje telefoniczne</h4>
+                                    <p class="text-gray-600">Do 30 minut rozmowy z naszym specjalistą</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-teal/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-teal text-xl">📋</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Analiza wyników</h4>
+                                    <p class="text-gray-600">Możliwość wcześniejszego przesłania wyników badań</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-pink/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-pink text-xl">💡</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Wsparcie informacyjne</h4>
+                                    <p class="text-gray-600">Porady, informacje i wskazówki dotyczące dalszego postępowania</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-pandas-purple/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-pandas-purple text-xl">🤝</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Wsparcie emocjonalne</h4>
+                                    <p class="text-gray-600">Pomoc w radzeniu sobie ze stresem i trudnymi emocjami</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ważne zastrzeżenie -->
+                        <div class="mt-8 bg-amber-50 border-2 border-amber-200 rounded-xl p-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-amber-600 text-lg">⚠️</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-amber-800 mb-2">Ważne zastrzeżenie</h4>
+                                    <p class="text-amber-700 text-sm">
+                                        Nasze konsultacje mają charakter informacyjny i wspierający. 
+                                        <strong>Nie stanowią diagnozy medycznej</strong> ani nie zastępują wizyty u lekarza.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-pandas-blue/5 to-pandas-purple/5 rounded-2xl shadow-xl p-8 border-2 border-pandas-blue/20">
+                        <div class="text-center mb-8">
+                            <div class="w-20 h-20 bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4 text-pandas-blue font-serif">Umów konsultację</h3>
+                            <p class="text-gray-600 mb-8">
+                                Gotowi jesteśmy na rozmowę w dogodnym dla Ciebie terminie. 
+                                Skorzystaj z naszego kalendarza online.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-pandas-green text-xl">✓</span>
+                                <span class="text-gray-700">Bezpłatne dla wszystkich rodzin</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-pandas-green text-xl">✓</span>
+                                <span class="text-gray-700">Cała Polska i zagranica</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-pandas-green text-xl">✓</span>
+                                <span class="text-gray-700">Dyskretnie i profesjonalnie</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-pandas-green text-xl">✓</span>
+                                <span class="text-gray-700">Dostępne 7 dni w tygodniu</span>
+                            </div>
+                        </div>
+
+                        <a href="https://fundacjapanspandas.nakiedy.pl/" target="_blank" 
+                           class="w-full bg-pandas-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-pandas-blue-dark transition-colors shadow-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            Przejdź do kalendarza
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wsparcie finansowe -->
+    <section id="wsparcie" class="py-20 bg-gradient-to-br from-caring-green to-soft-blue">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-serif">Wpłać cegiełkę</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <strong>Każda złotówka pomaga nam nieść pomoc</strong> kolejnym rodzinom. 
+                        Dzięki Waszemu wsparciu możemy kontynuować bezpłatne konsultacje i działania edukacyjne.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Główna metoda wpłaty -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-pandas-blue/20">
+                        <div class="text-center mb-8">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white text-2xl">💳</span>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4 text-pandas-blue font-serif">Przelew bankowy</h3>
+                        </div>
+                        
+                        <div class="bg-warm-gray rounded-xl p-6 mb-6">
+                            <div class="font-mono text-sm bg-white p-6 rounded-lg border-2 border-pandas-blue/20">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between">
+                                        <strong>Numer konta:</strong>
+                                    </div>
+                                    <div class="text-lg text-pandas-blue font-bold break-all">
+                                        47 2130 0004 2001 0704 2114 0001
+                                    </div>
+                                    <div class="pt-2 border-t border-gray-200">
+                                        <div><strong>Tytuł przelewu:</strong> Darowizna na cele statutowe</div>
+                                        <div><strong>Odbiorca:</strong> Fundacja Pans Pandas</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-gray-600 mb-6">
+                                Korzystając z przelewu bankowego, przekazujesz środki bezpośrednio na konto Fundacji
+                            </p>
+                            <button class="bg-pandas-blue text-white px-8 py-3 rounded-full hover:bg-pandas-blue-dark transition-colors font-semibold">
+                                Skopiuj dane do przelewu
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Inne sposoby wsparcia -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold mb-8 text-pandas-blue font-serif">Inne sposoby wsparcia</h3>
+                        
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-pandas-teal/20 hover:shadow-xl transition-all">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-pandas-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="text-pandas-teal text-xl">📊</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-pandas-teal">Przekaż 1,5% podatku</h4>
+                                    <p class="text-gray-600 mb-3">
+                                        Możesz przekazać nam swój 1,5% podatku bez żadnych dodatkowych kosztów.
+                                    </p>
+                                    <div class="font-mono text-sm bg-warm-gray p-3 rounded-lg">
+                                        <strong>KRS:</strong> [Numer KRS do uzupełnienia]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-pandas-pink/20 hover:shadow-xl transition-all">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-pandas-pink/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="text-pandas-pink text-xl">🤝</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-pandas-pink">Zostań wolontariuszem</h4>
+                                    <p class="text-gray-600 mb-3">
+                                        Dołącz do naszego zespołu i pomagaj bezpośrednio innym rodzinom.
+                                    </p>
+                                    <a href="#kontakt" class="text-pandas-pink hover:text-pandas-pink font-semibold inline-flex items-center">
+                                        Skontaktuj się z nami 
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-pandas-purple/20 hover:shadow-xl transition-all">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-pandas-purple/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="text-pandas-purple text-xl">📢</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2 text-pandas-purple">Udostępnij informacje</h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Pomóż nam dotrzeć do większej liczby rodzin potrzebujących wsparcia.
+                                    </p>
+                                    <div class="flex space-x-4">
+                                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Facebook</a>
+                                        <a href="#" class="text-pink-600 hover:text-pink-700 font-medium">Instagram</a>
+                                        <a href="#" class="text-red-600 hover:text-red-700 font-medium">YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materiały edukacyjne -->
+    <section id="materialy" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-serif">Materiały edukacyjne</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Zbiór wartościowych materiałów, które pomogą Ci lepiej zrozumieć PANS/PANDAS 
+                        i wspierać Twoje dziecko na co dzień.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Video Section -->
+                    <div>
+                        <div class="bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-2xl shadow-xl overflow-hidden">
+                            <div class="aspect-video bg-pandas-blue/90 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <svg class="w-20 h-20 mx-auto mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <p class="text-xl font-semibold mb-2">Co to jest PANS/PANDAS?</p>
+                                    <p class="text-sm opacity-80">Materiał edukacyjny dla rodziców</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-white mb-2">Wprowadzenie do PANS/PANDAS</h3>
+                                <p class="text-blue-100 mb-4">
+                                    Przystępne wyjaśnienie podstawowych informacji o zespołach PANS/PANDAS, 
+                                    przygotowane specjalnie dla rodziców.
+                                </p>
+                                <a href="#" class="inline-flex items-center bg-white text-pandas-blue px-6 py-3 rounded-full hover:bg-gray-100 transition-colors font-semibold">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    Obejrzyj film
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Materiały -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-pandas-blue font-serif">Nasze materiały</h3>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-4 p-4 bg-caring-green rounded-xl border border-pandas-blue/20">
+                                <div class="w-10 h-10 bg-pandas-blue/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-pandas-blue text-lg">📚</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Filmy edukacyjne</h4>
+                                    <p class="text-gray-600 text-sm">Seria filmów wyjaśniających różne aspekty PANS/PANDAS</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-caring-green rounded-xl border border-pandas-blue/20">
+                                <div class="w-10 h-10 bg-pandas-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-pandas-teal text-lg">📖</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Przewodniki dla rodziców</h4>
+                                    <p class="text-gray-600 text-sm">Praktyczne poradniki krok po kroku</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-caring-green rounded-xl border border-pandas-blue/20">
+                                <div class="w-10 h-10 bg-pandas-pink/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-pandas-pink text-lg">👥</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Webinary i spotkania</h4>
+                                    <p class="text-gray-600 text-sm">Regularne spotkania edukacyjne online</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#" 
+                               class="inline-flex items-center bg-pandas-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-pandas-blue-dark transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                Wszystkie materiały
+                            </a>
+                            <a href="#" 
+                               class="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                Kanał YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-20 bg-gradient-to-br from-soft-blue to-caring-green">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-serif">Kontakt</h2>
+                    <p class="text-lg text-gray-600">
+                        Potrzebujesz pomocy? Masz pytania? Napisz do nas lub umów konsultację
+                    </p>
+                </div>
+
+                <!-- Główny CTA -->
+                <div class="bg-white/90 rounded-2xl p-8 text-center mb-12 border-2 border-pandas-blue/20 shadow-xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-pandas-blue font-serif">Najszybsza pomoc</h3>
+                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Najefektywniejszym sposobem uzyskania wsparcia jest umówienie bezpłatnej konsultacji telefonicznej 
+                        z naszym specjalistą. Dostępne dla rodzin w całej Polsce i za granicą.
+                    </p>
+                    <a href="https://fundacjapanspandas.nakiedy.pl/" target="_blank" 
+                       class="inline-flex items-center bg-pandas-blue text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-pandas-blue-dark transition-colors shadow-lg">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        Umów bezpłatną konsultację
+                    </a>
+                </div>
+
+                <!-- Alternatywny kontakt -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center p-8 bg-white/90 rounded-2xl border-2 border-pandas-blue/20 shadow-lg">
+                        <div class="w-16 h-16 bg-pandas-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-pandas-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-4 text-pandas-blue">Napisz do nas</h4>
+                        <p class="text-gray-600 mb-4">Masz pytania? Potrzebujesz informacji?</p>
+                        <a href="mailto:fundacja.pans.pandas@gmail.com" 
+                           class="text-pandas-blue hover:text-pandas-blue-dark font-semibold text-lg break-all">
+                            fundacja.pans.pandas@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="text-center p-8 bg-white/90 rounded-2xl border-2 border-pandas-purple/20 shadow-lg">
+                        <div class="w-16 h-16 bg-pandas-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-pandas-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h8z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-4 text-pandas-purple">Śledź nas</h4>
+                        <p class="text-gray-600 mb-4">Bądź na bieżąco z naszymi działaniami</p>
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold">Facebook</a>
+                            <a href="#" class="text-pink-600 hover:text-pink-700 font-semibold">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo and Mission -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pandas-blue to-pandas-purple rounded-xl flex items-center justify-center">
+                            <span class="text-white text-xl">🧠</span>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold font-serif">Fundacja Pans Pandas</div>
+                            <div class="text-sm text-gray-400">Wsparcie • Edukacja • Diagnoza • Terapia</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Fundacja założona przez rodziców i specjalistów - z potrzeby serca. 
+                        Wspieramy rodziny dzieci z PANS/PANDAS poprzez bezpłatne konsultacje, 
+                        edukację i budowanie świadomości.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pandas-blue transition-colors">
+                            <span class="text-sm font-semibold">f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pandas-blue transition-colors">
+                            <span class="text-sm font-semibold">ig</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pandas-blue transition-colors">
+                            <span class="text-sm font-semibold">yt</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Szybkie linki</h3>
+                    <div class="space-y-3">
+                        <a href="#o-fundacji" class="text-gray-300 hover:text-pandas-blue transition-colors block">O Fundacji</a>
+                        <a href="#zespol" class="text-gray-300 hover:text-pandas-blue transition-colors block">Zespół</a>
+                        <a href="#konsultacje" class="text-gray-300 hover:text-pandas-blue transition-colors block">Konsultacje</a>
+                        <a href="#wsparcie" class="text-gray-300 hover:text-pandas-blue transition-colors block">Wsparcie</a>
+                        <a href="https://fundacjapanspandas.nakiedy.pl/" target="_blank" class="text-gray-300 hover:text-pandas-blue transition-colors block">Umów konsultację</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Kontakt</h3>
+                    <div class="text-gray-300 text-sm space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>fundacja.pans.pandas@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Cała Polska + online</span>
+                        </div>
+                        <div class="mt-4 p-3 bg-gray-800 rounded-lg">
+                            <div class="text-xs text-gray-400 mb-1">Konto dla darowizn:</div>
+                            <div class="font-mono text-xs">47 2130 0004 2001 0704 2114 0001</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm">
+                        © 2024 Fundacja Pans Pandas. Wszystkie prawa zastrzeżone.
+                    </div>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-pandas-blue transition-colors text-sm">Polityka prywatności</a>
+                        <a href="#" class="text-gray-400 hover:text-pandas-blue transition-colors text-sm">Statut</a>
+                        <a href="#" class="text-gray-400 hover:text-pandas-blue transition-colors text-sm">Sprawozdania</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Copy bank account number
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButtons = document.querySelectorAll('button');
+            copyButtons.forEach(button => {
+                if (button.textContent.includes('Skopiuj dane do przelewu')) {
+                    button.addEventListener('click', function() {
+                        const accountNumber = '47 2130 0004 2001 0704 2114 0001';
+                        navigator.clipboard.writeText(accountNumber).then(function() {
+                            button.textContent = 'Skopiowano!';
+                            button.classList.add('bg-pandas-green');
+                            setTimeout(() => {
+                                button.textContent = 'Skopiuj dane do przelewu';
+                                button.classList.remove('bg-pandas-green');
+                            }, 2000);
+                        });
+                    });
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
